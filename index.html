@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Lumiere | Moda Francesa</title>
+    <meta
+      name="description"
+      content="Maison Lumiere, e-commerce de moda francesa: novedades, mas vendidos y colecciones premium."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "Maison Lumiere",
+        "description": "Boutique de moda francesa de alta gama.",
+        "url": "https://maison-lumiere.example",
+        "telephone": "+33-1-23-45-67-89",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "12 Rue de la Paix",
+          "addressLocality": "Paris",
+          "postalCode": "75002",
+          "addressCountry": "FR"
+        },
+        "sameAs": [
+          "https://www.instagram.com/",
+          "https://www.pinterest.com/"
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Maison Lumiere",
+        "url": "https://maison-lumiere.example",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://maison-lumiere.example/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased [font-family:'Inter',sans-serif]">
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 w-full bg-transparent transition-all duration-300"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10"
+        aria-label="Navegacion principal"
+      >
+        <a
+          href="#"
+          class="text-sm font-medium uppercase tracking-[0.25em]"
+          aria-label="Maison Lumiere inicio"
+        >
+          Maison Lumiere
+        </a>
+
+        <ul class="hidden items-center gap-8 md:flex">
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">Novedades</a>
+          </li>
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">Mas Vendidos</a>
+          </li>
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">La Casa</a>
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-1 sm:gap-2">
+          <button
+            type="button"
+            aria-label="Buscar"
+            class="rounded-full p-2 hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-4.35-4.35m0 0a7.5 7.5 0 1 0-10.607 0 7.5 7.5 0 0 0 10.607 0Z"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            aria-label="Mi cuenta"
+            class="rounded-full p-2 hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            aria-label="Carrito"
+            class="rounded-full p-2 hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 3h1.386a1.5 1.5 0 0 1 1.415 1.029L5.92 7.5m0 0h12.58a1.5 1.5 0 0 1 1.455 1.864l-1.2 4.8a1.5 1.5 0 0 1-1.455 1.136H8.25m-2.33-7.8L7.5 15m0 0a1.5 1.5 0 1 0 3 0m-3 0a1.5 1.5 0 1 0-3 0m9-1.5a1.5 1.5 0 1 0 3 0m-3 0a1.5 1.5 0 1 0-3 0"
+              />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="relative grid min-h-screen place-items-center overflow-hidden px-4 sm:px-6 lg:px-10">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-b from-slate-50 via-white to-slate-50"></div>
+
+        <div class="mx-auto max-w-3xl text-center">
+          <p class="mb-4 text-xs uppercase tracking-widest text-slate-600">Coleccion Primavera Verano</p>
+          <h1 class="[font-family:'Playfair_Display',serif] text-4xl font-semibold leading-tight sm:text-5xl md:text-6xl">
+            La elegancia parisina
+            <span class="block">en cada silueta</span>
+          </h1>
+          <p class="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-slate-600 sm:text-base">
+            Descubre una seleccion couture inspirada en talleres franceses, creada para una presencia depurada y contemporanea.
+          </p>
+          <div class="mt-10 flex items-center justify-center">
+            <a
+              href="#"
+              class="rounded-none bg-slate-900 px-8 py-3 text-xs font-medium uppercase tracking-widest text-white transition hover:opacity-80"
+            >
+              Comprar ahora
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs uppercase tracking-widest text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
+        <p>Maison Lumiere 2026</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:opacity-80 transition">Envio</a>
+          <a href="#" class="hover:opacity-80 transition">Devoluciones</a>
+          <a href="#" class="hover:opacity-80 transition">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+
+      function updateHeader() {
+        if (window.scrollY > 24) {
+          header.classList.add('bg-white/95', 'backdrop-blur', 'border-b', 'border-slate-200');
+          header.classList.remove('bg-transparent');
+        } else {
+          header.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-slate-200');
+          header.classList.add('bg-transparent');
+        }
+      }
+
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+    </script>
+  </body>
+</html>
