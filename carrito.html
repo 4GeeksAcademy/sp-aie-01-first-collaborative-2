@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Lumiere | Carrito</title>
+    <meta
+      name="description"
+      content="Revisa los productos de tu carrito, cantidades y total de compra en Maison Lumiere."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased [font-family:'Inter',sans-serif]">
+    <header class="border-b border-slate-200 bg-white/95 backdrop-blur">
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10"
+        aria-label="Navegacion principal"
+      >
+        <a href="index.html" class="text-sm font-medium uppercase tracking-[0.25em]">Maison Lumiere</a>
+        <a href="index.html" class="text-xs uppercase tracking-widest text-slate-600 hover:text-slate-900 transition"
+          >Seguir comprando</a
+        >
+      </nav>
+    </header>
+
+    <main class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:gap-10 lg:px-10">
+      <section class="lg:col-span-2">
+        <div class="mb-6 flex items-end justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500">Tu seleccion</p>
+            <h1 class="mt-2 text-3xl font-semibold [font-family:'Playfair_Display',serif] sm:text-4xl">Carrito</h1>
+          </div>
+          <p class="text-xs uppercase tracking-widest text-slate-500"><span id="product-count">3</span> productos</p>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div class="hidden grid-cols-12 border-b border-slate-200 bg-slate-50 px-4 py-3 text-[11px] font-medium uppercase tracking-widest text-slate-500 sm:grid">
+            <p class="col-span-6">Producto</p>
+            <p class="col-span-2 text-center">Precio unitario</p>
+            <p class="col-span-2 text-center">Cantidad</p>
+            <p class="col-span-2 text-right">Total</p>
+          </div>
+
+          <ul id="cart-list" class="divide-y divide-slate-200">
+            <li class="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center" data-price="145" data-qty="1">
+              <div class="sm:col-span-6">
+                <div class="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=160&q=80"
+                    alt="Abrigo de lana marfil"
+                    class="h-20 w-20 rounded-lg object-cover"
+                  />
+                  <div>
+                    <p class="text-sm font-medium">Abrigo de lana marfil</p>
+                    <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Talla M</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="sm:col-span-2 sm:text-center">
+                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
+                <span class="text-sm">$145.00</span>
+              </p>
+
+              <div class="sm:col-span-2 sm:flex sm:justify-center">
+                <div class="inline-flex items-center rounded-full border border-slate-300">
+                  <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
+                  <span class="qty-value min-w-8 text-center text-sm">1</span>
+                  <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
+                </div>
+              </div>
+
+              <p class="sm:col-span-2 sm:text-right">
+                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
+                <span class="line-total text-sm font-semibold">$145.00</span>
+              </p>
+            </li>
+
+            <li class="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center" data-price="89" data-qty="2">
+              <div class="sm:col-span-6">
+                <div class="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=160&q=80"
+                    alt="Camisa satin champagne"
+                    class="h-20 w-20 rounded-lg object-cover"
+                  />
+                  <div>
+                    <p class="text-sm font-medium">Camisa satin champagne</p>
+                    <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Talla S</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="sm:col-span-2 sm:text-center">
+                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
+                <span class="text-sm">$89.00</span>
+              </p>
+
+              <div class="sm:col-span-2 sm:flex sm:justify-center">
+                <div class="inline-flex items-center rounded-full border border-slate-300">
+                  <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
+                  <span class="qty-value min-w-8 text-center text-sm">2</span>
+                  <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
+                </div>
+              </div>
+
+              <p class="sm:col-span-2 sm:text-right">
+                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
+                <span class="line-total text-sm font-semibold">$178.00</span>
+              </p>
+            </li>
+
+            <li class="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center" data-price="64" data-qty="1">
+              <div class="sm:col-span-6">
+                <div class="flex items-center gap-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=160&q=80"
+                    alt="Bolso mini cuir noir"
+                    class="h-20 w-20 rounded-lg object-cover"
+                  />
+                  <div>
+                    <p class="text-sm font-medium">Bolso mini cuir noir</p>
+                    <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Unica</p>
+                  </div>
+                </div>
+              </div>
+
+              <p class="sm:col-span-2 sm:text-center">
+                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
+                <span class="text-sm">$64.00</span>
+              </p>
+
+              <div class="sm:col-span-2 sm:flex sm:justify-center">
+                <div class="inline-flex items-center rounded-full border border-slate-300">
+                  <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
+                  <span class="qty-value min-w-8 text-center text-sm">1</span>
+                  <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
+                </div>
+              </div>
+
+              <p class="sm:col-span-2 sm:text-right">
+                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
+                <span class="line-total text-sm font-semibold">$64.00</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:sticky lg:top-24">
+        <p class="text-xs uppercase tracking-widest text-slate-500">Resumen</p>
+        <h2 class="mt-2 text-2xl font-semibold [font-family:'Playfair_Display',serif]">Totalizacion</h2>
+
+        <dl class="mt-6 space-y-4 text-sm">
+          <div class="flex items-center justify-between">
+            <dt class="text-slate-600">Subtotal</dt>
+            <dd id="subtotal" class="font-medium">$387.00</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-slate-600">Impuestos (16%)</dt>
+            <dd id="taxes" class="font-medium">$61.92</dd>
+          </div>
+          <div class="h-px bg-slate-200"></div>
+          <div class="flex items-center justify-between text-base">
+            <dt class="font-semibold">Total</dt>
+            <dd id="grand-total" class="font-semibold">$448.92</dd>
+          </div>
+        </dl>
+
+        <a
+          href="formulario-de-compra.html"
+          class="mt-8 block w-full rounded-xl bg-slate-900 px-4 py-3 text-center text-xs font-medium uppercase tracking-widest text-white transition hover:opacity-90"
+        >
+          Comprar
+        </a>
+      </aside>
+    </main>
+
+    <script>
+      const TAX_RATE = 0.16;
+      const cartItems = document.querySelectorAll('#cart-list li');
+      const subtotalEl = document.getElementById('subtotal');
+      const taxesEl = document.getElementById('taxes');
+      const grandTotalEl = document.getElementById('grand-total');
+      const productCountEl = document.getElementById('product-count');
+
+      const formatCurrency = (value) => `$${value.toFixed(2)}`;
+
+      function recalculateCart() {
+        let subtotal = 0;
+        let productCount = 0;
+
+        cartItems.forEach((item) => {
+          const price = Number(item.dataset.price);
+          const qty = Number(item.dataset.qty);
+          const lineTotal = price * qty;
+
+          item.querySelector('.qty-value').textContent = qty;
+          item.querySelector('.line-total').textContent = formatCurrency(lineTotal);
+
+          subtotal += lineTotal;
+          productCount += qty;
+        });
+
+        const taxes = subtotal * TAX_RATE;
+        const total = subtotal + taxes;
+
+        subtotalEl.textContent = formatCurrency(subtotal);
+        taxesEl.textContent = formatCurrency(taxes);
+        grandTotalEl.textContent = formatCurrency(total);
+        productCountEl.textContent = productCount;
+      }
+
+      function updateQuantity(item, delta) {
+        const currentQty = Number(item.dataset.qty);
+        const nextQty = Math.max(1, currentQty + delta);
+        item.dataset.qty = nextQty;
+        recalculateCart();
+      }
+
+      cartItems.forEach((item) => {
+        const minusBtn = item.querySelector('.minus');
+        const plusBtn = item.querySelector('.plus');
+
+        minusBtn.addEventListener('click', () => updateQuantity(item, -1));
+        plusBtn.addEventListener('click', () => updateQuantity(item, 1));
+      });
+
+      recalculateCart();
+    </script>
+  </body>
+</html>
