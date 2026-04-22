@@ -476,10 +476,12 @@
       productCards.forEach((card, index) => {
         const media = card.firstElementChild;
         const title = card.querySelector('h3')?.textContent?.trim() || `Producto ${index + 1}`;
+        const titleEl = card.querySelector('h3');
         const category = card.querySelector('p')?.textContent?.trim() || 'General';
         const priceText = card.querySelectorAll('p')[1]?.textContent?.trim() || 'EUR 0';
         const price = Number(priceText.replace(/[^\d.]/g, '')) || 0;
         const details = card.querySelector('.p-4');
+        const productUrl = `producto.html?id=${index + 1}`;
 
         if (!media) return;
 
@@ -492,6 +494,22 @@
 
         media.classList.add('overflow-hidden');
         media.appendChild(image);
+
+        const mediaLink = document.createElement('a');
+        mediaLink.href = productUrl;
+        mediaLink.className = 'absolute inset-0';
+        mediaLink.setAttribute('aria-label', `Ver detalle de ${title}`);
+        media.classList.add('relative');
+        media.appendChild(mediaLink);
+
+        if (titleEl) {
+          const titleLink = document.createElement('a');
+          titleLink.href = productUrl;
+          titleLink.className = 'hover:underline underline-offset-4';
+          titleLink.textContent = title;
+          titleEl.textContent = '';
+          titleEl.appendChild(titleLink);
+        }
 
         if (!details) return;
 
