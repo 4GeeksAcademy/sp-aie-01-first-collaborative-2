@@ -26,7 +26,7 @@
         aria-label="Navegacion principal"
       >
         <a href="index.html" class="text-sm font-medium uppercase tracking-[0.25em]">Maison Lumiere</a>
-        <a href="index.html" class="text-xs uppercase tracking-widest text-slate-600 hover:text-slate-900 transition"
+        <a href="Catalog.html" class="text-xs uppercase tracking-widest text-slate-600 hover:text-slate-900 transition"
           >Seguir comprando</a
         >
       </nav>
@@ -39,7 +39,7 @@
             <p class="text-xs uppercase tracking-widest text-slate-500">Tu seleccion</p>
             <h1 class="mt-2 text-3xl font-semibold [font-family:'Playfair_Display',serif] sm:text-4xl">Carrito</h1>
           </div>
-          <p class="text-xs uppercase tracking-widest text-slate-500"><span id="product-count">3</span> productos</p>
+          <p class="text-xs uppercase tracking-widest text-slate-500"><span id="product-count">0</span> productos</p>
         </div>
 
         <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
@@ -50,109 +50,8 @@
             <p class="col-span-2 text-right">Total</p>
           </div>
 
-          <ul id="cart-list" class="divide-y divide-slate-200">
-            <li class="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center" data-price="145" data-qty="1">
-              <div class="sm:col-span-6">
-                <div class="flex items-center gap-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=160&q=80"
-                    alt="Abrigo de lana marfil"
-                    class="h-20 w-20 rounded-lg object-cover"
-                  />
-                  <div>
-                    <p class="text-sm font-medium">Abrigo de lana marfil</p>
-                    <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Talla M</p>
-                  </div>
-                </div>
-              </div>
-
-              <p class="sm:col-span-2 sm:text-center">
-                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
-                <span class="text-sm">$145.00</span>
-              </p>
-
-              <div class="sm:col-span-2 sm:flex sm:justify-center">
-                <div class="inline-flex items-center rounded-full border border-slate-300">
-                  <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
-                  <span class="qty-value min-w-8 text-center text-sm">1</span>
-                  <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
-                </div>
-              </div>
-
-              <p class="sm:col-span-2 sm:text-right">
-                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
-                <span class="line-total text-sm font-semibold">$145.00</span>
-              </p>
-            </li>
-
-            <li class="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center" data-price="89" data-qty="2">
-              <div class="sm:col-span-6">
-                <div class="flex items-center gap-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=160&q=80"
-                    alt="Camisa satin champagne"
-                    class="h-20 w-20 rounded-lg object-cover"
-                  />
-                  <div>
-                    <p class="text-sm font-medium">Camisa satin champagne</p>
-                    <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Talla S</p>
-                  </div>
-                </div>
-              </div>
-
-              <p class="sm:col-span-2 sm:text-center">
-                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
-                <span class="text-sm">$89.00</span>
-              </p>
-
-              <div class="sm:col-span-2 sm:flex sm:justify-center">
-                <div class="inline-flex items-center rounded-full border border-slate-300">
-                  <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
-                  <span class="qty-value min-w-8 text-center text-sm">2</span>
-                  <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
-                </div>
-              </div>
-
-              <p class="sm:col-span-2 sm:text-right">
-                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
-                <span class="line-total text-sm font-semibold">$178.00</span>
-              </p>
-            </li>
-
-            <li class="grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center" data-price="64" data-qty="1">
-              <div class="sm:col-span-6">
-                <div class="flex items-center gap-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=160&q=80"
-                    alt="Bolso mini cuir noir"
-                    class="h-20 w-20 rounded-lg object-cover"
-                  />
-                  <div>
-                    <p class="text-sm font-medium">Bolso mini cuir noir</p>
-                    <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">Unica</p>
-                  </div>
-                </div>
-              </div>
-
-              <p class="sm:col-span-2 sm:text-center">
-                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
-                <span class="text-sm">$64.00</span>
-              </p>
-
-              <div class="sm:col-span-2 sm:flex sm:justify-center">
-                <div class="inline-flex items-center rounded-full border border-slate-300">
-                  <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
-                  <span class="qty-value min-w-8 text-center text-sm">1</span>
-                  <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
-                </div>
-              </div>
-
-              <p class="sm:col-span-2 sm:text-right">
-                <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
-                <span class="line-total text-sm font-semibold">$64.00</span>
-              </p>
-            </li>
-          </ul>
+          <ul id="cart-list" class="divide-y divide-slate-200"></ul>
+          <p id="empty-cart" class="hidden px-4 py-8 text-center text-sm text-slate-500">Tu carrito esta vacio.</p>
         </div>
       </section>
 
@@ -186,8 +85,10 @@
     </main>
 
     <script>
+      const CART_STORAGE_KEY = 'maisonLumiereCart';
       const TAX_RATE = 0.16;
-      const cartItems = document.querySelectorAll('#cart-list li');
+      const cartListEl = document.getElementById('cart-list');
+      const emptyCartEl = document.getElementById('empty-cart');
       const subtotalEl = document.getElementById('subtotal');
       const taxesEl = document.getElementById('taxes');
       const grandTotalEl = document.getElementById('grand-total');
@@ -195,17 +96,78 @@
 
       const formatCurrency = (value) => `$${value.toFixed(2)}`;
 
+      function readCart() {
+        try {
+          const rawCart = localStorage.getItem(CART_STORAGE_KEY);
+          const parsedCart = rawCart ? JSON.parse(rawCart) : [];
+          return Array.isArray(parsedCart) ? parsedCart : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCart(items) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      }
+
+      function renderCartItems(items) {
+        cartListEl.innerHTML = '';
+
+        items.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.className = 'grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center';
+          li.dataset.index = String(index);
+
+          const imageSrc = item.image || `https://picsum.photos/seed/cart-${index + 1}/160/160`;
+          const itemTotal = Number(item.price) * Number(item.qty);
+
+          li.innerHTML = `
+            <div class="sm:col-span-6">
+              <div class="flex items-center gap-4">
+                <img
+                  src="${imageSrc}"
+                  alt="${item.name}"
+                  class="h-20 w-20 rounded-lg object-cover"
+                />
+                <div>
+                  <p class="text-sm font-medium">${item.name}</p>
+                  <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">${item.category || 'General'}</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="sm:col-span-2 sm:text-center">
+              <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
+              <span class="text-sm">${formatCurrency(Number(item.price))}</span>
+            </p>
+
+            <div class="sm:col-span-2 sm:flex sm:justify-center">
+              <div class="inline-flex items-center rounded-full border border-slate-300">
+                <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
+                <span class="qty-value min-w-8 text-center text-sm">${item.qty}</span>
+                <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
+              </div>
+            </div>
+
+            <p class="sm:col-span-2 sm:text-right">
+              <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
+              <span class="line-total text-sm font-semibold">${formatCurrency(itemTotal)}</span>
+            </p>
+          `;
+
+          cartListEl.appendChild(li);
+        });
+      }
+
       function recalculateCart() {
+        const items = readCart();
         let subtotal = 0;
         let productCount = 0;
 
-        cartItems.forEach((item) => {
-          const price = Number(item.dataset.price);
-          const qty = Number(item.dataset.qty);
+        items.forEach((item) => {
+          const price = Number(item.price);
+          const qty = Number(item.qty);
           const lineTotal = price * qty;
-
-          item.querySelector('.qty-value').textContent = qty;
-          item.querySelector('.line-total').textContent = formatCurrency(lineTotal);
 
           subtotal += lineTotal;
           productCount += qty;
@@ -218,23 +180,48 @@
         taxesEl.textContent = formatCurrency(taxes);
         grandTotalEl.textContent = formatCurrency(total);
         productCountEl.textContent = productCount;
+        emptyCartEl.classList.toggle('hidden', items.length > 0);
       }
 
-      function updateQuantity(item, delta) {
-        const currentQty = Number(item.dataset.qty);
-        const nextQty = Math.max(1, currentQty + delta);
-        item.dataset.qty = nextQty;
+      function updateQuantity(index, delta) {
+        const items = readCart();
+        const targetItem = items[index];
+
+        if (!targetItem) return;
+
+        const nextQty = Number(targetItem.qty) + delta;
+
+        if (nextQty <= 0) {
+          items.splice(index, 1);
+        } else {
+          targetItem.qty = nextQty;
+        }
+
+        writeCart(items);
+        renderCartItems(items);
         recalculateCart();
       }
 
-      cartItems.forEach((item) => {
-        const minusBtn = item.querySelector('.minus');
-        const plusBtn = item.querySelector('.plus');
+      cartListEl.addEventListener('click', (event) => {
+        const target = event.target;
 
-        minusBtn.addEventListener('click', () => updateQuantity(item, -1));
-        plusBtn.addEventListener('click', () => updateQuantity(item, 1));
+        if (!(target instanceof HTMLElement)) return;
+
+        const itemRow = target.closest('li');
+        if (!itemRow) return;
+
+        const index = Number(itemRow.dataset.index);
+
+        if (target.classList.contains('minus')) {
+          updateQuantity(index, -1);
+        }
+
+        if (target.classList.contains('plus')) {
+          updateQuantity(index, 1);
+        }
       });
 
+      renderCartItems(readCart());
       recalculateCart();
     </script>
   </body>

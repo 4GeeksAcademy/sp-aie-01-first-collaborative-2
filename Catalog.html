@@ -128,10 +128,10 @@
             </svg>
           </button>
 
-          <button
-            type="button"
+          <a
+            href="carrito.html"
             aria-label="Carrito"
-            class="rounded-full p-2 hover:bg-slate-100 transition"
+            class="relative rounded-full p-2 hover:bg-slate-100 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -147,7 +147,11 @@
                 d="M2.25 3h1.386a1.5 1.5 0 0 1 1.415 1.029L5.92 7.5m0 0h12.58a1.5 1.5 0 0 1 1.455 1.864l-1.2 4.8a1.5 1.5 0 0 1-1.455 1.136H8.25m-2.33-7.8L7.5 15m0 0a1.5 1.5 0 1 0 3 0m-3 0a1.5 1.5 0 1 0-3 0m9-1.5a1.5 1.5 0 1 0 3 0m-3 0a1.5 1.5 0 1 0-3 0"
               />
             </svg>
-          </button>
+            <span
+              id="cart-count"
+              class="absolute -right-1 -top-1 inline-flex min-w-5 items-center justify-center rounded-full bg-slate-900 px-1.5 text-[10px] font-medium text-white"
+            >0</span>
+          </a>
         </div>
       </nav>
     </header>
@@ -420,10 +424,62 @@
       updateHeader();
       window.addEventListener('scroll', updateHeader, { passive: true });
 
+      const CART_STORAGE_KEY = 'maisonLumiereCart';
+      const cartCountEl = document.getElementById('cart-count');
+
+      function readCart() {
+        try {
+          const rawCart = localStorage.getItem(CART_STORAGE_KEY);
+          const parsedCart = rawCart ? JSON.parse(rawCart) : [];
+          return Array.isArray(parsedCart) ? parsedCart : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCart(items) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      }
+
+      function updateCartCount() {
+        const items = readCart();
+        const totalQty = items.reduce((sum, item) => sum + Number(item.qty || 0), 0);
+        cartCountEl.textContent = String(totalQty);
+      }
+
+      function addItemToCart(product) {
+        const items = readCart();
+        const existingItem = items.find((item) => item.name === product.name);
+
+        if (existingItem) {
+          existingItem.qty += 1;
+        } else {
+          items.push({ ...product, qty: 1 });
+        }
+
+        writeCart(items);
+        updateCartCount();
+      }
+
+      function showAddedFeedback(button) {
+        const originalText = button.textContent;
+        button.textContent = 'Anadido';
+        button.classList.add('opacity-80');
+
+        window.setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('opacity-80');
+        }, 900);
+      }
+
       // Inserta una imagen por producto con semilla unica para mantener variedad visual.
       productCards.forEach((card, index) => {
         const media = card.firstElementChild;
         const title = card.querySelector('h3')?.textContent?.trim() || `Producto ${index + 1}`;
+        const category = card.querySelector('p')?.textContent?.trim() || 'General';
+        const priceText = card.querySelectorAll('p')[1]?.textContent?.trim() || 'EUR 0';
+        const price = Number(priceText.replace(/[^\d.]/g, '')) || 0;
+        const details = card.querySelector('.p-4');
 
         if (!media) return;
 
@@ -436,7 +492,29 @@
 
         media.classList.add('overflow-hidden');
         media.appendChild(image);
+
+        if (!details) return;
+
+        const buyButton = document.createElement('button');
+        buyButton.type = 'button';
+        buyButton.className =
+          'mt-4 w-full rounded-none bg-slate-900 px-4 py-2 text-xs font-medium uppercase tracking-widest text-white transition hover:opacity-80';
+        buyButton.textContent = 'Comprar';
+
+        buyButton.addEventListener('click', () => {
+          addItemToCart({
+            name: title,
+            category,
+            price,
+            image: image.src,
+          });
+          showAddedFeedback(buyButton);
+        });
+
+        details.appendChild(buyButton);
       });
+
+      updateCartCount();
     </script>
   </body>
 </html>
