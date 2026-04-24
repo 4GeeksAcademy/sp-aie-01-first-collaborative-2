@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Lumiere | Carrito</title>
+    <meta
+      name="description"
+      content="Revisa los productos de tu carrito, cantidades y total de compra en Maison Lumiere."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 text-slate-900 antialiased [font-family:'Inter',sans-serif]">
+    <header class="border-b border-slate-200 bg-white/95 backdrop-blur">
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10"
+        aria-label="Navegacion principal"
+      >
+        <a href="index.html" class="text-sm font-medium uppercase tracking-[0.25em]">Maison Lumiere</a>
+        <a href="Catalog.html" class="text-xs uppercase tracking-widest text-slate-600 hover:text-slate-900 transition"
+          >Seguir comprando</a
+        >
+      </nav>
+    </header>
+
+    <main class="mx-auto grid max-w-7xl gap-8 px-4 py-10 sm:px-6 lg:grid-cols-3 lg:gap-10 lg:px-10">
+      <section class="lg:col-span-2">
+        <div class="mb-6 flex items-end justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-slate-500">Tu seleccion</p>
+            <h1 class="mt-2 text-3xl font-semibold [font-family:'Playfair_Display',serif] sm:text-4xl">Carrito</h1>
+          </div>
+          <p class="text-xs uppercase tracking-widest text-slate-500"><span id="product-count">0</span> productos</p>
+        </div>
+
+        <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div class="hidden grid-cols-12 border-b border-slate-200 bg-slate-50 px-4 py-3 text-[11px] font-medium uppercase tracking-widest text-slate-500 sm:grid">
+            <p class="col-span-6">Producto</p>
+            <p class="col-span-2 text-center">Precio unitario</p>
+            <p class="col-span-2 text-center">Cantidad</p>
+            <p class="col-span-2 text-right">Total</p>
+          </div>
+
+          <ul id="cart-list" class="divide-y divide-slate-200"></ul>
+          <p id="empty-cart" class="hidden px-4 py-8 text-center text-sm text-slate-500">Tu carrito esta vacio.</p>
+        </div>
+      </section>
+
+      <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm lg:sticky lg:top-24">
+        <p class="text-xs uppercase tracking-widest text-slate-500">Resumen</p>
+        <h2 class="mt-2 text-2xl font-semibold [font-family:'Playfair_Display',serif]">Totalizacion</h2>
+
+        <dl class="mt-6 space-y-4 text-sm">
+          <div class="flex items-center justify-between">
+            <dt class="text-slate-600">Subtotal</dt>
+            <dd id="subtotal" class="font-medium">$387.00</dd>
+          </div>
+          <div class="flex items-center justify-between">
+            <dt class="text-slate-600">Impuestos (16%)</dt>
+            <dd id="taxes" class="font-medium">$61.92</dd>
+          </div>
+          <div class="h-px bg-slate-200"></div>
+          <div class="flex items-center justify-between text-base">
+            <dt class="font-semibold">Total</dt>
+            <dd id="grand-total" class="font-semibold">$448.92</dd>
+          </div>
+        </dl>
+
+        <a
+          href="formulario-de-compra.html"
+          class="mt-8 block w-full rounded-xl bg-slate-900 px-4 py-3 text-center text-xs font-medium uppercase tracking-widest text-white transition hover:opacity-90"
+        >
+          Comprar
+        </a>
+      </aside>
+    </main>
+
+    <script>
+      const CART_STORAGE_KEY = 'maisonLumiereCart';
+      const TAX_RATE = 0.16;
+      const cartListEl = document.getElementById('cart-list');
+      const emptyCartEl = document.getElementById('empty-cart');
+      const subtotalEl = document.getElementById('subtotal');
+      const taxesEl = document.getElementById('taxes');
+      const grandTotalEl = document.getElementById('grand-total');
+      const productCountEl = document.getElementById('product-count');
+
+      const formatCurrency = (value) => `$${value.toFixed(2)}`;
+
+      function readCart() {
+        try {
+          const rawCart = localStorage.getItem(CART_STORAGE_KEY);
+          const parsedCart = rawCart ? JSON.parse(rawCart) : [];
+          return Array.isArray(parsedCart) ? parsedCart : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCart(items) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      }
+
+      function renderCartItems(items) {
+        cartListEl.innerHTML = '';
+
+        items.forEach((item, index) => {
+          const li = document.createElement('li');
+          li.className = 'grid grid-cols-1 gap-4 px-4 py-5 sm:grid-cols-12 sm:items-center';
+          li.dataset.index = String(index);
+
+          const imageSrc = item.image || `https://picsum.photos/seed/cart-${index + 1}/160/160`;
+          const itemTotal = Number(item.price) * Number(item.qty);
+
+          li.innerHTML = `
+            <div class="sm:col-span-6">
+              <div class="flex items-center gap-4">
+                <img
+                  src="${imageSrc}"
+                  alt="${item.name}"
+                  class="h-20 w-20 rounded-lg object-cover"
+                />
+                <div>
+                  <p class="text-sm font-medium">${item.name}</p>
+                  <p class="mt-1 text-xs uppercase tracking-wide text-slate-500">${item.category || 'General'}</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="sm:col-span-2 sm:text-center">
+              <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Precio unitario: </span>
+              <span class="text-sm">${formatCurrency(Number(item.price))}</span>
+            </p>
+
+            <div class="sm:col-span-2 sm:flex sm:justify-center">
+              <div class="inline-flex items-center rounded-full border border-slate-300">
+                <button type="button" class="qty-btn minus px-3 py-1 text-sm" aria-label="Disminuir cantidad">-</button>
+                <span class="qty-value min-w-8 text-center text-sm">${item.qty}</span>
+                <button type="button" class="qty-btn plus px-3 py-1 text-sm" aria-label="Aumentar cantidad">+</button>
+              </div>
+            </div>
+
+            <p class="sm:col-span-2 sm:text-right">
+              <span class="text-[11px] uppercase tracking-widest text-slate-500 sm:hidden">Total: </span>
+              <span class="line-total text-sm font-semibold">${formatCurrency(itemTotal)}</span>
+            </p>
+          `;
+
+          cartListEl.appendChild(li);
+        });
+      }
+
+      function recalculateCart() {
+        const items = readCart();
+        let subtotal = 0;
+        let productCount = 0;
+
+        items.forEach((item) => {
+          const price = Number(item.price);
+          const qty = Number(item.qty);
+          const lineTotal = price * qty;
+
+          subtotal += lineTotal;
+          productCount += qty;
+        });
+
+        const taxes = subtotal * TAX_RATE;
+        const total = subtotal + taxes;
+
+        subtotalEl.textContent = formatCurrency(subtotal);
+        taxesEl.textContent = formatCurrency(taxes);
+        grandTotalEl.textContent = formatCurrency(total);
+        productCountEl.textContent = productCount;
+        emptyCartEl.classList.toggle('hidden', items.length > 0);
+      }
+
+      function updateQuantity(index, delta) {
+        const items = readCart();
+        const targetItem = items[index];
+
+        if (!targetItem) return;
+
+        const nextQty = Number(targetItem.qty) + delta;
+
+        if (nextQty <= 0) {
+          items.splice(index, 1);
+        } else {
+          targetItem.qty = nextQty;
+        }
+
+        writeCart(items);
+        renderCartItems(items);
+        recalculateCart();
+      }
+
+      cartListEl.addEventListener('click', (event) => {
+        const target = event.target;
+
+        if (!(target instanceof HTMLElement)) return;
+
+        const itemRow = target.closest('li');
+        if (!itemRow) return;
+
+        const index = Number(itemRow.dataset.index);
+
+        if (target.classList.contains('minus')) {
+          updateQuantity(index, -1);
+        }
+
+        if (target.classList.contains('plus')) {
+          updateQuantity(index, 1);
+        }
+      });
+
+      renderCartItems(readCart());
+      recalculateCart();
+    </script>
+  </body>
+</html>

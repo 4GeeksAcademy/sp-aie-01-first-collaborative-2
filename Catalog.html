@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Lumiere | Catalogo</title>
+    <meta
+      name="description"
+      content="Catalogo de Maison Lumiere con filtros por categoria y talla, y productos de moda francesa premium."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Catalogo Maison Lumiere",
+        "description": "Catalogo con seleccion de productos de moda francesa.",
+        "url": "https://maison-lumiere.example/catalog",
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Productos destacados",
+          "numberOfItems": 20,
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "url": "https://maison-lumiere.example/producto/1" },
+            { "@type": "ListItem", "position": 2, "url": "https://maison-lumiere.example/producto/2" },
+            { "@type": "ListItem", "position": 3, "url": "https://maison-lumiere.example/producto/3" },
+            { "@type": "ListItem", "position": 4, "url": "https://maison-lumiere.example/producto/4" },
+            { "@type": "ListItem", "position": 5, "url": "https://maison-lumiere.example/producto/5" },
+            { "@type": "ListItem", "position": 6, "url": "https://maison-lumiere.example/producto/6" },
+            { "@type": "ListItem", "position": 7, "url": "https://maison-lumiere.example/producto/7" },
+            { "@type": "ListItem", "position": 8, "url": "https://maison-lumiere.example/producto/8" },
+            { "@type": "ListItem", "position": 9, "url": "https://maison-lumiere.example/producto/9" },
+            { "@type": "ListItem", "position": 10, "url": "https://maison-lumiere.example/producto/10" },
+            { "@type": "ListItem", "position": 11, "url": "https://maison-lumiere.example/producto/11" },
+            { "@type": "ListItem", "position": 12, "url": "https://maison-lumiere.example/producto/12" },
+            { "@type": "ListItem", "position": 13, "url": "https://maison-lumiere.example/producto/13" },
+            { "@type": "ListItem", "position": 14, "url": "https://maison-lumiere.example/producto/14" },
+            { "@type": "ListItem", "position": 15, "url": "https://maison-lumiere.example/producto/15" },
+            { "@type": "ListItem", "position": 16, "url": "https://maison-lumiere.example/producto/16" },
+            { "@type": "ListItem", "position": 17, "url": "https://maison-lumiere.example/producto/17" },
+            { "@type": "ListItem", "position": 18, "url": "https://maison-lumiere.example/producto/18" },
+            { "@type": "ListItem", "position": 19, "url": "https://maison-lumiere.example/producto/19" },
+            { "@type": "ListItem", "position": 20, "url": "https://maison-lumiere.example/producto/20" }
+          ]
+        }
+      }
+    </script>
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased [font-family:'Inter',sans-serif]">
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 w-full bg-transparent transition-all duration-300"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10"
+        aria-label="Navegacion principal"
+      >
+        <a
+          href="index.html"
+          class="text-sm font-medium uppercase tracking-[0.25em]"
+          aria-label="Maison Lumiere inicio"
+        >
+          Maison Lumiere
+        </a>
+
+        <ul class="hidden items-center gap-8 md:flex">
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">Novedades</a>
+          </li>
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">Mas Vendidos</a>
+          </li>
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">La Casa</a>
+          </li>
+        </ul>
+
+        <div class="flex items-center gap-1 sm:gap-2">
+          <button
+            type="button"
+            aria-label="Buscar"
+            class="rounded-full p-2 hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m21 21-4.35-4.35m0 0a7.5 7.5 0 1 0-10.607 0 7.5 7.5 0 0 0 10.607 0Z"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            aria-label="Mi cuenta"
+            class="rounded-full p-2 hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275"
+              />
+            </svg>
+          </button>
+
+          <a
+            href="carrito.html"
+            aria-label="Carrito"
+            class="relative rounded-full p-2 hover:bg-slate-100 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="h-5 w-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 3h1.386a1.5 1.5 0 0 1 1.415 1.029L5.92 7.5m0 0h12.58a1.5 1.5 0 0 1 1.455 1.864l-1.2 4.8a1.5 1.5 0 0 1-1.455 1.136H8.25m-2.33-7.8L7.5 15m0 0a1.5 1.5 0 1 0 3 0m-3 0a1.5 1.5 0 1 0-3 0m9-1.5a1.5 1.5 0 1 0 3 0m-3 0a1.5 1.5 0 1 0-3 0"
+              />
+            </svg>
+            <span
+              id="cart-count"
+              class="absolute -right-1 -top-1 inline-flex min-w-5 items-center justify-center rounded-full bg-slate-900 px-1.5 text-[10px] font-medium text-white"
+            >0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="border-b border-slate-200 bg-slate-50/80">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-10">
+          <h1 class="[font-family:'Playfair_Display',serif] text-3xl font-semibold sm:text-4xl">Catalogo</h1>
+          <p class="mt-2 max-w-2xl text-sm text-slate-600 sm:text-base">
+            Encuentra piezas listas para combinar, con filtros rapidos por categoria y talla.
+          </p>
+        </div>
+      </section>
+
+      <section aria-label="Filtros de productos" class="border-b border-slate-200 bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-5 sm:px-6 lg:px-10">
+          <form class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_auto] lg:items-end">
+            <div>
+              <label for="filtro-categoria" class="mb-2 block text-xs uppercase tracking-widest text-slate-600">Categoria</label>
+              <select
+                id="filtro-categoria"
+                name="categoria"
+                class="w-full rounded-none border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-slate-900"
+              >
+                <option value="todos">Todas las categorias</option>
+                <option value="vestidos">Vestidos</option>
+                <option value="blazers">Blazers</option>
+                <option value="camisas">Camisas</option>
+                <option value="accesorios">Accesorios</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="filtro-talla" class="mb-2 block text-xs uppercase tracking-widest text-slate-600">Talla</label>
+              <select
+                id="filtro-talla"
+                name="talla"
+                class="w-full rounded-none border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none transition focus:border-slate-900"
+              >
+                <option value="todas">Todas las tallas</option>
+                <option value="xs">XS</option>
+                <option value="s">S</option>
+                <option value="m">M</option>
+                <option value="l">L</option>
+                <option value="xl">XL</option>
+              </select>
+            </div>
+
+            <button
+              type="button"
+              class="h-[42px] rounded-none bg-slate-900 px-6 text-xs font-medium uppercase tracking-widest text-white transition hover:opacity-80"
+            >
+              Aplicar
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10" aria-label="Listado de productos">
+        <h2 class="sr-only">Productos</h2>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Vestidos</p>
+              <h3 class="mt-1 text-sm font-medium">Robe Lumiere</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 189</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Blazers</p>
+              <h3 class="mt-1 text-sm font-medium">Veste Paris</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 249</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Camisas</p>
+              <h3 class="mt-1 text-sm font-medium">Chemise Atelier</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 129</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Accesorios</p>
+              <h3 class="mt-1 text-sm font-medium">Sac Belleville</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 159</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Vestidos</p>
+              <h3 class="mt-1 text-sm font-medium">Robe Marais</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 205</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Blazers</p>
+              <h3 class="mt-1 text-sm font-medium">Veste Rive Gauche</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 269</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Camisas</p>
+              <h3 class="mt-1 text-sm font-medium">Chemise Etoile</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 119</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Accesorios</p>
+              <h3 class="mt-1 text-sm font-medium">Foulard Seine</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 89</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Vestidos</p>
+              <h3 class="mt-1 text-sm font-medium">Robe Montmartre</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 215</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Blazers</p>
+              <h3 class="mt-1 text-sm font-medium">Veste Concorde</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 239</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Camisas</p>
+              <h3 class="mt-1 text-sm font-medium">Chemise Palais</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 135</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Accesorios</p>
+              <h3 class="mt-1 text-sm font-medium">Ceinture Opera</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 99</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Vestidos</p>
+              <h3 class="mt-1 text-sm font-medium">Robe Madeleine</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 199</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Blazers</p>
+              <h3 class="mt-1 text-sm font-medium">Veste Victoire</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 255</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Camisas</p>
+              <h3 class="mt-1 text-sm font-medium">Chemise Vendome</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 125</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Accesorios</p>
+              <h3 class="mt-1 text-sm font-medium">Pochette Louvre</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 109</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Vestidos</p>
+              <h3 class="mt-1 text-sm font-medium">Robe Harmonie</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 225</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Blazers</p>
+              <h3 class="mt-1 text-sm font-medium">Veste Imperial</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 279</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Camisas</p>
+              <h3 class="mt-1 text-sm font-medium">Chemise Jardin</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 139</p>
+            </div>
+          </article>
+
+          <article class="group border border-slate-200">
+            <div class="aspect-[4/5] bg-slate-100"></div>
+            <div class="p-4">
+              <p class="text-xs uppercase tracking-widest text-slate-500">Accesorios</p>
+              <h3 class="mt-1 text-sm font-medium">Bracelet Royale</h3>
+              <p class="mt-1 text-sm text-slate-700">EUR 95</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs uppercase tracking-widest text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
+        <p>Maison Lumiere 2026</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:opacity-80 transition">Envio</a>
+          <a href="#" class="hover:opacity-80 transition">Devoluciones</a>
+          <a href="#" class="hover:opacity-80 transition">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+      const productCards = document.querySelectorAll('section[aria-label="Listado de productos"] article');
+
+      function updateHeader() {
+        if (window.scrollY > 24) {
+          header.classList.add('bg-white/95', 'backdrop-blur', 'border-b', 'border-slate-200');
+          header.classList.remove('bg-transparent');
+        } else {
+          header.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-slate-200');
+          header.classList.add('bg-transparent');
+        }
+      }
+
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
+      const CART_STORAGE_KEY = 'maisonLumiereCart';
+      const cartCountEl = document.getElementById('cart-count');
+
+      function readCart() {
+        try {
+          const rawCart = localStorage.getItem(CART_STORAGE_KEY);
+          const parsedCart = rawCart ? JSON.parse(rawCart) : [];
+          return Array.isArray(parsedCart) ? parsedCart : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCart(items) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      }
+
+      function updateCartCount() {
+        const items = readCart();
+        const totalQty = items.reduce((sum, item) => sum + Number(item.qty || 0), 0);
+        cartCountEl.textContent = String(totalQty);
+      }
+
+      function addItemToCart(product) {
+        const items = readCart();
+        const existingItem = items.find((item) => item.name === product.name);
+
+        if (existingItem) {
+          existingItem.qty += 1;
+        } else {
+          items.push({ ...product, qty: 1 });
+        }
+
+        writeCart(items);
+        updateCartCount();
+      }
+
+      function showAddedFeedback(button) {
+        const originalText = button.textContent;
+        button.textContent = 'Anadido';
+        button.classList.add('opacity-80');
+
+        window.setTimeout(() => {
+          button.textContent = originalText;
+          button.classList.remove('opacity-80');
+        }, 900);
+      }
+
+      // Inserta una imagen por producto con semilla unica para mantener variedad visual.
+      productCards.forEach((card, index) => {
+        const media = card.firstElementChild;
+        const title = card.querySelector('h3')?.textContent?.trim() || `Producto ${index + 1}`;
+        const titleEl = card.querySelector('h3');
+        const category = card.querySelector('p')?.textContent?.trim() || 'General';
+        const priceText = card.querySelectorAll('p')[1]?.textContent?.trim() || 'EUR 0';
+        const price = Number(priceText.replace(/[^\d.]/g, '')) || 0;
+        const details = card.querySelector('.p-4');
+        const productUrl = `producto.html?id=${index + 1}`;
+
+        if (!media) return;
+
+        const image = document.createElement('img');
+        image.src = `https://picsum.photos/seed/maison-lumiere-${index + 1}/800/1000`;
+        image.alt = title;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        image.className = 'h-full w-full object-cover transition duration-500 group-hover:scale-105';
+
+        media.classList.add('overflow-hidden');
+        media.appendChild(image);
+
+        const mediaLink = document.createElement('a');
+        mediaLink.href = productUrl;
+        mediaLink.className = 'absolute inset-0';
+        mediaLink.setAttribute('aria-label', `Ver detalle de ${title}`);
+        media.classList.add('relative');
+        media.appendChild(mediaLink);
+
+        if (titleEl) {
+          const titleLink = document.createElement('a');
+          titleLink.href = productUrl;
+          titleLink.className = 'hover:underline underline-offset-4';
+          titleLink.textContent = title;
+          titleEl.textContent = '';
+          titleEl.appendChild(titleLink);
+        }
+
+        if (!details) return;
+
+        const buyButton = document.createElement('button');
+        buyButton.type = 'button';
+        buyButton.className =
+          'mt-4 w-full rounded-none bg-slate-900 px-4 py-2 text-xs font-medium uppercase tracking-widest text-white transition hover:opacity-80';
+        buyButton.textContent = 'Comprar';
+
+        buyButton.addEventListener('click', () => {
+          addItemToCart({
+            name: title,
+            category,
+            price,
+            image: image.src,
+          });
+          showAddedFeedback(buyButton);
+        });
+
+        details.appendChild(buyButton);
+      });
+
+      updateCartCount();
+    </script>
+  </body>
+</html>

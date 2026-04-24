@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Lumiere | Vista de Producto</title>
+    <meta
+      name="description"
+      content="Vista de producto de Maison Lumiere con imagen, talla, precio, selector de cantidad y descripcion detallada."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white text-slate-900 antialiased [font-family:'Inter',sans-serif]">
+    <header
+      id="site-header"
+      class="sticky top-0 z-50 w-full bg-transparent transition-all duration-300"
+    >
+      <nav
+        class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-10"
+        aria-label="Navegacion principal"
+      >
+        <a
+          href="index.html"
+          class="text-sm font-medium uppercase tracking-[0.25em]"
+          aria-label="Maison Lumiere inicio"
+        >
+          Maison Lumiere
+        </a>
+
+        <ul class="hidden items-center gap-8 md:flex">
+          <li>
+            <a href="Catalog.html" class="text-xs uppercase tracking-widest hover:opacity-80 transition">Catalogo</a>
+          </li>
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">Mas Vendidos</a>
+          </li>
+          <li>
+            <a href="#" class="text-xs uppercase tracking-widest hover:opacity-80 transition">La Casa</a>
+          </li>
+        </ul>
+
+        <a
+          href="carrito.html"
+          class="rounded-none border border-slate-900 px-4 py-2 text-xs font-medium uppercase tracking-widest transition hover:bg-slate-900 hover:text-white"
+          aria-label="Ir al carrito"
+        >
+          Carrito
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="border-b border-slate-200 bg-slate-50/80">
+        <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-10">
+          <p class="text-xs uppercase tracking-widest text-slate-500">Maison Lumiere / Producto</p>
+          <h1 class="mt-2 [font-family:'Playfair_Display',serif] text-3xl font-semibold sm:text-4xl">Detalle de Producto</h1>
+        </div>
+      </section>
+
+      <section class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10" aria-label="Vista principal del producto">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-12">
+          <div class="overflow-hidden border border-slate-200 bg-slate-100">
+            <img
+              src="https://picsum.photos/seed/maison-lumiere-producto/1200/1500"
+              alt="Robe Lumiere en tono marfil"
+              loading="eager"
+              decoding="async"
+              class="h-full w-full object-cover"
+            />
+          </div>
+
+          <div class="flex flex-col justify-between">
+            <div>
+              <p class="text-xs uppercase tracking-widest text-slate-500">Vestidos</p>
+              <h2 class="mt-2 [font-family:'Playfair_Display',serif] text-3xl font-semibold">Robe Lumiere</h2>
+
+              <dl class="mt-6 space-y-3 text-sm">
+                <div class="flex items-start justify-between gap-4 border-b border-slate-200 pb-3">
+                  <dt class="uppercase tracking-widest text-slate-500">Codigo</dt>
+                  <dd class="font-medium">ML-RL-2026-01</dd>
+                </div>
+                <div class="flex items-start justify-between gap-4 border-b border-slate-200 pb-3">
+                  <dt class="uppercase tracking-widest text-slate-500">Talla</dt>
+                  <dd id="selected-size" class="font-medium">M</dd>
+                </div>
+                <div class="flex items-start justify-between gap-4 border-b border-slate-200 pb-3">
+                  <dt class="uppercase tracking-widest text-slate-500">Precio</dt>
+                  <dd class="text-base font-semibold">EUR 189</dd>
+                </div>
+              </dl>
+
+              <fieldset class="mt-6" aria-label="Seleccion de talla">
+                <legend class="mb-3 text-xs uppercase tracking-widest text-slate-600">Elige tu talla</legend>
+                <div class="flex flex-wrap gap-2">
+                  <button type="button" class="size-option min-w-12 border border-slate-300 px-3 py-2 text-xs uppercase tracking-widest transition hover:border-slate-900">XS</button>
+                  <button type="button" class="size-option min-w-12 border border-slate-300 px-3 py-2 text-xs uppercase tracking-widest transition hover:border-slate-900">S</button>
+                  <button type="button" class="size-option is-active min-w-12 border border-slate-900 bg-slate-900 px-3 py-2 text-xs uppercase tracking-widest text-white transition">M</button>
+                  <button type="button" class="size-option min-w-12 border border-slate-300 px-3 py-2 text-xs uppercase tracking-widest transition hover:border-slate-900">L</button>
+                  <button type="button" class="size-option min-w-12 border border-slate-300 px-3 py-2 text-xs uppercase tracking-widest transition hover:border-slate-900">XL</button>
+                </div>
+              </fieldset>
+
+              <div class="mt-8">
+                <label for="quantity" class="mb-3 block text-xs uppercase tracking-widest text-slate-600">Cantidad</label>
+                <div class="inline-flex items-center border border-slate-300">
+                  <button
+                    type="button"
+                    id="decrease-qty"
+                    class="h-11 w-11 text-lg transition hover:bg-slate-100"
+                    aria-label="Disminuir cantidad"
+                  >
+                    -
+                  </button>
+                  <input
+                    id="quantity"
+                    type="number"
+                    min="1"
+                    value="1"
+                    class="h-11 w-16 border-x border-slate-300 text-center text-sm outline-none"
+                    aria-label="Cantidad"
+                  />
+                  <button
+                    type="button"
+                    id="increase-qty"
+                    class="h-11 w-11 text-lg transition hover:bg-slate-100"
+                    aria-label="Aumentar cantidad"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              id="buy-now-button"
+              class="mt-8 h-12 w-full rounded-none bg-slate-900 px-6 text-xs font-medium uppercase tracking-[0.2em] text-white transition hover:opacity-80"
+            >
+              Comprar ahora
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="border-y border-slate-200 bg-slate-50/60" aria-label="Descripcion detallada del producto">
+        <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
+          <h3 class="[font-family:'Playfair_Display',serif] text-2xl font-semibold">Descripcion detallada</h3>
+
+          <div class="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-10">
+            <article class="border border-slate-200 bg-white p-6">
+              <h4 class="text-xs font-semibold uppercase tracking-widest text-slate-700">Materiales</h4>
+              <p class="mt-3 text-sm leading-6 text-slate-700">
+                Tejido principal en mezcla premium de lino (55%) y algodon egipcio (45%), con forro interno
+                ligero en viscosa transpirable. Costuras reforzadas y acabados a mano para mantener la
+                estructura elegante de la prenda.
+              </p>
+            </article>
+
+            <article class="border border-slate-200 bg-white p-6">
+              <h4 class="text-xs font-semibold uppercase tracking-widest text-slate-700">Uso recomendado</h4>
+              <p class="mt-3 text-sm leading-6 text-slate-700">
+                Ideal para cenas formales, reuniones ejecutivas, eventos de coctel y celebraciones de dia.
+                Su corte limpio permite combinarlo con blazer para oficina o con accesorios delicados para
+                una salida nocturna.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-slate-200">
+      <div class="mx-auto flex max-w-7xl flex-col gap-3 px-4 py-8 text-xs uppercase tracking-widest text-slate-600 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-10">
+        <p>Maison Lumiere 2026</p>
+        <div class="flex items-center gap-6">
+          <a href="#" class="hover:opacity-80 transition">Envio</a>
+          <a href="#" class="hover:opacity-80 transition">Devoluciones</a>
+          <a href="#" class="hover:opacity-80 transition">Contacto</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const header = document.getElementById('site-header');
+      const quantityInput = document.getElementById('quantity');
+      const decreaseQtyButton = document.getElementById('decrease-qty');
+      const increaseQtyButton = document.getElementById('increase-qty');
+      const sizeLabel = document.getElementById('selected-size');
+      const sizeButtons = document.querySelectorAll('.size-option');
+      const buyNowButton = document.getElementById('buy-now-button');
+      const CART_STORAGE_KEY = 'maisonLumiereCart';
+
+      const productData = {
+        name: 'Robe Lumiere',
+        category: 'Vestidos',
+        price: 189,
+        image: 'https://picsum.photos/seed/maison-lumiere-producto/1200/1500',
+      };
+
+      function updateHeader() {
+        if (window.scrollY > 24) {
+          header.classList.add('bg-white/95', 'backdrop-blur', 'border-b', 'border-slate-200');
+          header.classList.remove('bg-transparent');
+        } else {
+          header.classList.remove('bg-white/95', 'backdrop-blur', 'border-b', 'border-slate-200');
+          header.classList.add('bg-transparent');
+        }
+      }
+
+      function clampQuantity() {
+        const value = Number(quantityInput.value);
+
+        if (!Number.isFinite(value) || value < 1) {
+          quantityInput.value = '1';
+          return;
+        }
+
+        quantityInput.value = String(Math.floor(value));
+      }
+
+      function readCart() {
+        try {
+          const rawCart = localStorage.getItem(CART_STORAGE_KEY);
+          const parsedCart = rawCart ? JSON.parse(rawCart) : [];
+          return Array.isArray(parsedCart) ? parsedCart : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function writeCart(items) {
+        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(items));
+      }
+
+      function addToCart() {
+        clampQuantity();
+
+        const qty = Math.max(1, Number(quantityInput.value));
+        const selectedSize = sizeLabel.textContent.trim();
+        const items = readCart();
+
+        const existingItem = items.find(
+          (item) => item.name === productData.name && item.size === selectedSize
+        );
+
+        if (existingItem) {
+          existingItem.qty = Number(existingItem.qty) + qty;
+        } else {
+          items.push({
+            ...productData,
+            size: selectedSize,
+            qty,
+          });
+        }
+
+        writeCart(items);
+
+        const originalText = buyNowButton.textContent;
+        buyNowButton.textContent = 'Anadido al carrito';
+        buyNowButton.classList.add('opacity-80');
+
+        window.setTimeout(() => {
+          buyNowButton.textContent = originalText;
+          buyNowButton.classList.remove('opacity-80');
+        }, 900);
+      }
+
+      function setActiveSize(button) {
+        sizeButtons.forEach((item) => {
+          item.classList.remove('is-active', 'border-slate-900', 'bg-slate-900', 'text-white');
+          item.classList.add('border-slate-300');
+        });
+
+        button.classList.add('is-active', 'border-slate-900', 'bg-slate-900', 'text-white');
+        button.classList.remove('border-slate-300');
+
+        sizeLabel.textContent = button.textContent.trim();
+      }
+
+      updateHeader();
+      window.addEventListener('scroll', updateHeader, { passive: true });
+
+      decreaseQtyButton.addEventListener('click', () => {
+        clampQuantity();
+        quantityInput.value = String(Math.max(1, Number(quantityInput.value) - 1));
+      });
+
+      increaseQtyButton.addEventListener('click', () => {
+        clampQuantity();
+        quantityInput.value = String(Number(quantityInput.value) + 1);
+      });
+
+      quantityInput.addEventListener('input', clampQuantity);
+
+      sizeButtons.forEach((button) => {
+        button.addEventListener('click', () => setActiveSize(button));
+      });
+
+      buyNowButton.addEventListener('click', addToCart);
+    </script>
+  </body>
+</html>
